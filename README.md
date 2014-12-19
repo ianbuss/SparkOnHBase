@@ -1,7 +1,7 @@
 # SparkOnHBase
 
 ##This Github has been moved to 
-http://github.mtv.cloudera.com/cloudera-labs/SparkOnHBase
+http://blog.cloudera.com/blog/2014/12/new-in-cloudera-labs-sparkonhbase/
 
 ## Overview
 This is a simple reusable lib for working with HBase with Spark
