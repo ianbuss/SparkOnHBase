@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.cloudera.sa</groupId>
-	<artifactId>spark.hbase</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.cloudera</groupId>
+	<artifactId>spark-hbase</artifactId>
+	<version>0.0.4-clabs-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spark.hbase</name>
+	<name>Spark HBase Integration</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -29,12 +29,12 @@
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.10</artifactId>
-			<version>1.0.0-cdh5.1.0</version>
+			<version>1.2.0-cdh5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming_2.10</artifactId>
-			<version>1.0.0-cdh5.1.0</version>
+			<version>1.2.0-cdh5.3.0</version>
 			<type>test-jar</type>
 			<classifier>tests</classifier>
 			<!-- <scope>test</scope> Return-->
@@ -42,17 +42,17 @@
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming_2.10</artifactId>
-			<version>1.0.0-cdh5.1.0</version>
+			<version>1.2.0-cdh5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-client</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-client</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<type>test-jar</type>
 			<classifier>tests</classifier>
 			<scope>test</scope>
@@ -60,30 +60,30 @@
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-server</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-server</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<type>test-jar</type>
 			<!-- <classifier>tests</classifier> Return-->
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-protocol</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-hadoop2-compat</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<!-- <scope>runtime</scope> --> 
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-hadoop2-compat</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<type>test-jar</type>
 			<classifier>tests</classifier>
 			<!-- <scope>test</scope> Return-->
@@ -91,12 +91,12 @@
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-common</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-common</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<type>test-jar</type>
 			<classifier>tests</classifier>
 			<!-- <scope>test</scope> Return-->
@@ -104,13 +104,13 @@
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-hadoop-compat</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<!-- <scope>test</scope> Return-->
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-hadoop-compat</artifactId>
-			<version>0.98.1-cdh5.1.0</version>
+			<version>0.98.6-cdh5.3.0</version>
 			<type>test-jar</type>
 			<classifier>tests</classifier>
 			<!-- <scope>test</scope> Return-->
@@ -227,5 +227,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
+ <distributionManagement>
+    <repository>
+      <id>cdh.releases.repo</id>
+      <url>http://maven.jenkins.cloudera.com:8081/artifactory/cdh-staging-local</url>
+      <name>CDH Releases Repository</name>
+    </repository>
+    <snapshotRepository>
+      <id>cdh.snapshots.repo</id>
+      <url>http://maven.jenkins.cloudera.com:8081/artifactory/cdh-snapshot-local</url>
+      <name>CDH Snapshots Repository</name>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
