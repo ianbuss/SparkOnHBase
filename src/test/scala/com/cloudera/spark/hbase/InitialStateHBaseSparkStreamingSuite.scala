@@ -133,7 +133,7 @@ class InitialStateHBaseSparkStreamingSuite extends FunSuite with BeforeAndAfterE
     val counts = dstream.count();
 
     val hbaseContext = new HBaseContext(sc, config);
-    hbaseContext.bulkPut[Long](counts,
+    hbaseContext.streamBulkPut[Long](counts,
       tableName,
       (putRecord) => {
         val put = new Put(Bytes.toBytes("-" + counts))
@@ -144,7 +144,7 @@ class InitialStateHBaseSparkStreamingSuite extends FunSuite with BeforeAndAfterE
       },
       true);
 
-    ssc.stop(true);
+    ssc.stop(false);
   }
 
   test("bulkIncrement to test HBase client") {
