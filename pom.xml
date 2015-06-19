@@ -251,6 +251,13 @@
 
 	<profiles>
 		<profile>
+			<id>cdh510</id>
+			<properties>
+				<spark.version>1.0.0-cdh5.1.0</spark.version>
+				<hbase.version>0.98.1-cdh5.1.0</hbase.version>
+			</properties>
+		</profile>
+		<profile>
 			<id>cdh532</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
